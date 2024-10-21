@@ -1,7 +1,7 @@
 import os
 from flask import Flask, request
 
-# Create a new Flask ap
+# Create a new Flask app
 app = Flask(__name__)
 
 # == Your Routes Here ==
@@ -15,6 +15,23 @@ app = Flask(__name__)
 @app.route('/emoji', methods=['GET'])
 def get_emoji():
     return ":)"
+
+
+@app.route('/submit', methods=['POST'])
+def submit():
+    name = request.form['name'] # The value is the name sent in
+    message = request.form['message'] #The value will be the second name entered
+
+    return f"Thanks {name}, you sent this message: {message}"
+
+@app.route('/wave', methods=['GET'])
+def wave():
+    name = request.form['name'] # The value is the name sent in
+
+    return f"I am waving at {name}"
+
+
+
 
 # This imports some more example routes for you to see how they work
 # You can delete these lines if you don't need them.
