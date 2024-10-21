@@ -1,7 +1,7 @@
 import os
 from flask import Flask, request
 
-# Create a new Flask app
+# Create a new Flask ap
 app = Flask(__name__)
 
 # == Your Routes Here ==
